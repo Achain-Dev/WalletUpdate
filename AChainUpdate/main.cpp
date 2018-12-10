@@ -8,7 +8,7 @@
 bool checkOnly()
 {
     //  创建互斥量
-    HANDLE m_hMutex = CreateMutex(NULL, FALSE, L"AchainUp 1.0.4.0");
+    HANDLE m_hMutex = CreateMutex(NULL, FALSE, L"AchainUp 1.0.5.0");
     //  检查错误代码
     if (GetLastError() == ERROR_ALREADY_EXISTS)  {
         //  如果已有互斥量存在则释放句柄并复位互斥量

@@ -1,29 +1,21 @@
 #include <QCryptographicHash>
 #include <QFile>
 #include <QDir>
-
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QDateTime>
-
 #include <QDebug>
-
 #include <QtCore/QCoreApplication>
 
 #include "JlCompress.h"
-
 #include "qt_windows.h"
 
+#include "macro.h"
 
-#define  TOOL_NAME      "AChainUpdateInfoGenTool.exe"
-#define  UPDATE_URL "http://achain.oss-cn-beijing.aliyuncs.com/win/update_lite/"
-//#define  UPDATE_URL     "http://achain.oss-cn-beijing.aliyuncs.com/update/"
-#define  UPDATE_NAME    "AchainUp.exe"
-
-//QStringList ignore_file = {TOOL_NAME, "icudt53.dll", "icuin53.dll", "icuuc53.dll", "Qt5Core.dll"};
 QStringList ignore_file = { UPDATE_NAME };
 QString dir_path = "Achain";
+
 struct fileInfo
 {
     fileInfo(QString filename, QString version, QString hash) :
@@ -235,8 +227,6 @@ void createUpdateAndConfig(QString updatePath)
         return;
     }
 
-    //QFile::copy(updatePath, QCoreApplication::applicationDirPath() + "/update/" + UPDATE_NAME);
-
     file.open(QIODevice::ReadOnly);
     QString md5 = getFileMd5(&file);
     file.close();
@@ -245,8 +235,6 @@ void createUpdateAndConfig(QString updatePath)
         QCoreApplication::applicationDirPath() + "/update/" + UPDATE_NAME + "." + md5 + ".zip",
         updatePath);
 
-    //QDateTime current_date_time = QDateTime::currentDateTime();
-    //QString current_date = current_date_time.toString("yyyyMMdd");
     QString version = getFileAttrVersion(updatePath);
 
     QJsonObject updatejson;

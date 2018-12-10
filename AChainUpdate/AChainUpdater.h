@@ -3,19 +3,15 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
-
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-
 #include <QObject>
 #include <QVector>
-
 #include <QFile>
 #include <QDir>
 #include <QFileInfo>
 #include <QDebug>
-
 #include <QCryptographicHash>
 #include <QtCore/QCoreApplication>
 #include <QProcess>
@@ -24,18 +20,14 @@
 #include <QTimer>
 
 #include "qt_windows.h"
+#include "macro.h"
 
 #define ACHAIN_NAME "Achain.exe"
 #define UPDATE_TOOL_NAME "AchainUp.exe"
 #define UPDATE_INSTALL_TOOL "AchainUpTool.exe"
-#define UPDATE_INSTALL_TOOL_L L"AchainUpTool.exe"
-#define TOOL_NAME "AChainUpdateInfoGenTool.exe"
-#define UPDATE_BASE_URL "http://achain.oss-cn-beijing.aliyuncs.com/win/update_lite/"
-//#define UPDATE_BASE_URL "http://achain.oss-cn-beijing.aliyuncs.com/update/"
 #define UPDATE_CONFIG_FILE "config.json"
 #define REMOTE_UPDATE_FILE "file_index.json"
 #define UPDATE_LIST_FILE "update_file_index.json"
-#define UPDATE_DIR "AchainLiteUpdate"
 #define MAX_MD5_ERROR_CNT (5)
 #define UPDATE_SYS_MODE_INSTALL "install"
 #define UPDATE_SYS_MODE_DOWNLOAD "download"

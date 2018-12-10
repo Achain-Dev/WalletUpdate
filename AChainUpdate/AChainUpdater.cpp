@@ -1,12 +1,14 @@
+
 #include "AChainUpdater.h"
 #include "JlCompress.h"
 #include <qt_windows.h>
 #include <QSystemTrayIcon>
-#include "resource.h"
-
 #include <QSharedMemory>
 #include <QTextStream>
 #include <QBuffer>
+
+#include "resource.h"
+#include "macro.h"
 
 AChainUpdater::AChainUpdater() :
 isupdate(false), isindex(false), update_system(false), md5_check_error_cnt(0),
@@ -644,7 +646,7 @@ void AChainUpdater::getCurrentFileMD5Info(QString path, QVector<fileInfo>& file_
             if (mfi.filePath().startsWith(path)){
                 filePath = mfi.filePath().mid(path.size() + 1);
             }
-            if (mfi.fileName() == QString(TOOL_NAME)){
+			if (mfi.fileName() == QString(GEN_TOOL_NAME)){
                 continue;
             }
             qDebug() << "local file" << filePath;

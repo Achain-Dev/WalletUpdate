@@ -19,14 +19,13 @@
 #include <QBuffer>
 
 
-#define TEMP_DIR "AchainLiteTemp"
 #define UPDATE_LIST_FILE "update_file_index.json"
-
 #define VERSION_CONFIG "version.ini"
 #define UPDATE_SYS_MODE_DOWNLOAD "download"
 #define UPDATE_SYS_MODE_UPDATE "update"
-
 #define UPDATE_TOOL_NAME "AchainUp.exe"
+
+#define TEMP_DIR "AchainLiteTemp"
 #define SYS_NAME "AchainWalletLite.exe"
 #define UPDATE_DIR "AchainLiteUpdate"
 

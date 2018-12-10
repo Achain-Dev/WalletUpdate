@@ -77,4 +77,9 @@
   <ItemGroup>
     <ResourceCompile Include="AChainUpdate.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\macro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

@@ -183,6 +183,9 @@
       </AdditionalInputs>
     </CustomBuild>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\macro.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
