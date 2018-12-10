@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AChainUpdateClass</class>
+ <widget class="QMainWindow" name="AChainUpdateClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AChainUpdate</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDddd">
+    <property name="title">
+     <string>dddd</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuFff">
+    <property name="title">
+     <string>fff</string>
+    </property>
+    <addaction name="updateAction"/>
+   </widget>
+   <addaction name="menuDddd"/>
+   <addaction name="menuFff"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAsdf">
+   <property name="text">
+    <string>asdf </string>
+   </property>
+  </action>
+  <action name="updateAction">
+   <property name="text">
+    <string>gelp</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="AChainUpdate.qrc"/>
+ </resources>
+ <connections/>
+</ui>
