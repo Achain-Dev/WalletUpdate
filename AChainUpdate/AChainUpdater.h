@@ -75,6 +75,7 @@ public:
     void json2UpdateInfo(QJsonObject& obj, updateInfo& update_info);
     bool updateFileCheck();
     HANDLE ReleseResourceExe(WORD wResourceId, const TCHAR *pszFileName);
+	bool copyFolderTo(QString oriPath, QString destPath, bool coverFileIfExist = true);
     void runToolAsAdmin(bool isUpdate=false);
     void getCurrentFileMD5Info(QString path, QVector<fileInfo>& file_list);
     void saveLocalUpdateFileInfo();

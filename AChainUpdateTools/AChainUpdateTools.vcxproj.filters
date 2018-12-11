@@ -28,4 +28,7 @@
   <ItemGroup>
     <ResourceCompile Include="AChainUpdateTools.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="dll2.bin" />
+  </ItemGroup>
 </Project>

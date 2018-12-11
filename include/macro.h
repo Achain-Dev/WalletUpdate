@@ -13,24 +13,24 @@
 #define UPDATE_LIST_FILE "update_file_index.json"
 #define UPDATE_CONFIG_FILE "config.json"
 #define REMOTE_UPDATE_FILE "file_index.json"
+#define WINDOWS_DLL_PATH "platforms"
 
 #define MAX_MD5_ERROR_CNT (5)
-
 
 #if TRUE
 
 #define SYS_NAME "AchainWalletLite.exe"
 #define TEMP_DIR "AchainLiteTemp"
 #define UPDATE_DIR "AchainLiteUpdate"
-#define UPDATE_URL "http://achain-wallet.oss-cn-hongkong.aliyuncs.com/win/update_lite/"
-#define UPDATE_BASE_URL "http://achain-wallet.oss-cn-hongkong.aliyuncs.com/win/update_lite/"
+#define UPDATE_URL ""
+#define UPDATE_BASE_URL ""
 
 #else
 
 #define SYS_NAME "Achain.exe"
 #define TEMP_DIR "AchainTemp"
 #define UPDATE_DIR "AchainUpdate"
-#define UPDATE_URL "http://achain-wallet.oss-cn-hongkong.aliyuncs.com/win/update/"
-#define UPDATE_BASE_URL "http://achain-wallet.oss-cn-hongkong.aliyuncs.com/win/update/"
+#define UPDATE_URL ""
+#define UPDATE_BASE_URL ""
 
 #endif

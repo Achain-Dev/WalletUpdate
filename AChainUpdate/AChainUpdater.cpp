@@ -256,6 +256,41 @@ HANDLE AChainUpdater::ReleseResourceExe(WORD wResourceId, const TCHAR *pszFileNa
     return NULL;
 }
 
+bool AChainUpdater::copyFolderTo(QString oriPath, QString destPath, bool coverFileIfExist)
+{
+	QDir sourceDir(oriPath);
+	QDir targetDir(destPath);
+
+	if (!targetDir.exists()){    /**< 如果目标目录不存在，则进行创建 */
+		if (!targetDir.mkdir(targetDir.absolutePath()))
+			return false;
+	}
+
+	QFileInfoList fileInfoList = sourceDir.entryInfoList();
+	foreach(QFileInfo fileInfo, fileInfoList){
+
+		if (fileInfo.fileName() == "." || fileInfo.fileName() == "..")
+			continue;
+
+		if (fileInfo.isDir()){    /**< 当为目录时，递归的进行copy */
+			if (!copyFolderTo(fileInfo.filePath(), targetDir.filePath(fileInfo.fileName()), coverFileIfExist))
+				return false;
+		}
+		else{            /**< 当允许覆盖操作时，将旧文件进行删除操作 */
+			if (coverFileIfExist && targetDir.exists(fileInfo.fileName())){
+				targetDir.remove(fileInfo.fileName());
+			}
+
+			/// 进行文件copy
+			if (!QFile::copy(fileInfo.filePath(), targetDir.filePath(fileInfo.fileName()))){
+				return false;
+			}
+		}
+	}
+
+	return true;
+}
+
 //void AChainUpdater::runToolAsAdmin(bool isUpdate)
 //{
 //#ifdef WIN32
@@ -369,7 +404,11 @@ void AChainUpdater::httpFinished()
         if (update_system) { // after download AchainUpdate.exe, start download file_index.json
             QString releasePath = _app_data_path + "/" + UPDATE_INSTALL_TOOL;
             ReleseResourceExe(IDR_TOOL_EXE, releasePath.toStdWString().c_str());
-            runToolAsAdmin(true);
+
+			QString dllPath = _app_data_path + "/" + WINDOWS_DLL_PATH;
+			copyFolderTo(WINDOWS_DLL_PATH, dllPath);
+            
+			runToolAsAdmin(true);
             emit sysFinished();
             return;
         }
@@ -880,7 +919,11 @@ void AChainUpdater::updateRunTool()
     }
 
     QString releasePath = _app_data_path + "/" + UPDATE_INSTALL_TOOL;
-    ReleseResourceExe(IDR_TOOL_EXE, releasePath.toStdWString().c_str());
+	ReleseResourceExe(IDR_TOOL_EXE, releasePath.toStdWString().c_str());
+	
+	QString dllPath = _app_data_path + "/" + WINDOWS_DLL_PATH;
+	copyFolderTo(WINDOWS_DLL_PATH, dllPath);
+
     runToolAsAdmin();
 
     timerWaitUpgrade = new QTimer(this);

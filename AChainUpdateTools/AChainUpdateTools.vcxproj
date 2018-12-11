@@ -89,6 +89,9 @@ copy /y "$(OutDir)\AchainUpTool.exe" "$(OutDir)\..\..\AChainUpdate\AchainUpTool.
   <ItemGroup>
     <ResourceCompile Include="AChainUpdateTools.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="dll2.bin" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
