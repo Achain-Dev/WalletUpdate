@@ -1,34 +1,19 @@
 ﻿#include <QDir>
 #include <QFile>
-
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-
 #include <QApplication>
 #include <QSettings>
-
 #include <QDebug>
 #include <QProcess>
 #include <QTextCodec>
-
-#include "qt_windows.h"
 #include <QSystemTrayIcon>
-
 #include <QSharedMemory>
 #include <QBuffer>
+#include "qt_windows.h"
 
-
-#define UPDATE_LIST_FILE "update_file_index.json"
-#define VERSION_CONFIG "version.ini"
-#define UPDATE_SYS_MODE_DOWNLOAD "download"
-#define UPDATE_SYS_MODE_UPDATE "update"
-#define UPDATE_TOOL_NAME "AchainUp.exe"
-
-#define TEMP_DIR "AchainLiteTemp"
-#define SYS_NAME "AchainWalletLite.exe"
-#define UPDATE_DIR "AchainLiteUpdate"
-
+#include "macro.h"
 
 struct fileInfo
 {

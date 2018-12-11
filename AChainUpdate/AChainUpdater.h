@@ -22,18 +22,6 @@
 #include "qt_windows.h"
 #include "macro.h"
 
-#define ACHAIN_NAME "Achain.exe"
-#define UPDATE_TOOL_NAME "AchainUp.exe"
-#define UPDATE_INSTALL_TOOL "AchainUpTool.exe"
-#define UPDATE_CONFIG_FILE "config.json"
-#define REMOTE_UPDATE_FILE "file_index.json"
-#define UPDATE_LIST_FILE "update_file_index.json"
-#define MAX_MD5_ERROR_CNT (5)
-#define UPDATE_SYS_MODE_INSTALL "install"
-#define UPDATE_SYS_MODE_DOWNLOAD "download"
-#define UPDATE_SYS_MODE_UPDATE "update"
-#define VERSION_CONFIG "version.ini"
-
 struct updateInfo
 {
     QString update_version;
